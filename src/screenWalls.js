@@ -15,12 +15,12 @@ export class ScreenWalls {
 
     this.leftWall = new MatterJsRectangle(x1, cy, w, height, isStatic, world, engine);
     this.rightWall = new MatterJsRectangle(x2, cy, w, height, isStatic, world, engine);
-    this.bottomWall = new MatterJsRectangle(cx, y2, width, w, isStatic, world, engine);
+    // this.bottomWall = new MatterJsRectangle(cx, y2, width, w, isStatic, world, engine);
 
     this.walls = [
       this.leftWall,
       this.rightWall,
-      this.bottomWall,
+      // this.bottomWall,
     ];
   }
 

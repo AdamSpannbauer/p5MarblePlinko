@@ -5,7 +5,7 @@ export class PegBoard {
     this.pegs = [];
 
     const yBuffer = pegR * 5;
-    const xBuffer = pegR * 2.5;
+    const xBuffer = pegR * 1;
     const rowSpacing = pegR * 6;
     const colSpacing = pegR * 8;
 
@@ -13,7 +13,7 @@ export class PegBoard {
     for (let y = yBuffer + pegR; y + pegR < height - yBuffer; y += rowSpacing) {
       rowI += 1;
       const xOffset = rowI % 2 === 1 ? 0 : colSpacing / 2;
-      for (let x = xBuffer + pegR; x + pegR + xOffset < width - xBuffer; x += colSpacing) {
+      for (let x = xBuffer + pegR; x + xOffset < width - xBuffer; x += colSpacing) {
         const peg = new Peg(x + xOffset, y, pegR, world, engine);
         this.pegs.push(peg);
       }

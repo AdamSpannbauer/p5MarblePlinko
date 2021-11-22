@@ -3,6 +3,7 @@
 export class MatterJsCircle {
   constructor(x, y, r, isStatic, world, engine) {
     this.body = Matter.Bodies.circle(x, y, r, { isStatic });
+    this.drawRadius = r;
     world.add(engine.world, this.body);
   }
 
@@ -27,7 +28,7 @@ export class MatterJsCircle {
   }
 
   draw() {
-    const { x, y, r } = this;
-    ellipse(x, y, r * 2, r * 2);
+    const { x, y, drawRadius } = this;
+    ellipse(x, y, drawRadius * 2, drawRadius * 2);
   }
 }
