@@ -1,0 +1,25 @@
+{
+  "name": "p5marbleplinko",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamSpannbauer/p5MarblePlinko.git"
+  },
+  "author": "Adam Spannbauer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdamSpannbauer/p5MarblePlinko/issues"
+  },
+  "homepage": "https://github.com/AdamSpannbauer/p5MarblePlinko#readme",
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-p5js": "^1.1.0",
+    "eslint-plugin-import": "^2.25.3"
+  }
+}
