@@ -1,3 +1,4 @@
+/* globals Matter */
 import { MatterJsCircle } from './matterJsCircle.js';
 
 const UT = { r: 255, g: 130, b: 0 };
@@ -25,6 +26,23 @@ export class Marble extends MatterJsCircle {
       x: null,
       time: null,
     };
+    this.frameCounter = 0;
+  }
+
+  restart() {
+    const b = this.r * 2;
+
+    this.x = random(b, width - b);
+    this.y = 0;
+    this.body.angle = 0;
+    this.body.anglePrev = 0;
+
+    this.frameCounter = 0;
+    this.finished = false;
+    this.finishedStats = {
+      x: null,
+      time: null,
+    };
   }
 
   checkFinish() {
@@ -34,12 +52,12 @@ export class Marble extends MatterJsCircle {
     if (y + r >= height) {
       this.finished = true;
       this.finishedStats = {
-        x, time: frameCount / 60,
+        x, time: this.frameCounter / 60,
       };
     }
   }
 
-  draw() {
+  draw(i) {
     push();
     fill(this.fill);
     stroke(this.fill);
@@ -50,7 +68,7 @@ export class Marble extends MatterJsCircle {
       stroke(this.fill);
       textSize(20);
 
-      text(`${t.toFixed(2)}s`, x, height - r);
+      text(`${t.toFixed(2)}s`, x, height - r - (i * 20));
     }
 
     super.draw();

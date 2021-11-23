@@ -16,7 +16,10 @@ export class MatterJsCircle {
   }
 
   set x(x) {
-    this.body.position.x = x;
+    Matter.Body.setPosition(this.body, { x, y: this.y });
+    Matter.Body.setVelocity(this.body, { x: 0, y: 0 });
+    Matter.Body.setAngularVelocity(this.body, 0);
+    Matter.Body.setAngle(this.body, 0);
   }
 
   get y() {
@@ -24,7 +27,10 @@ export class MatterJsCircle {
   }
 
   set y(y) {
-    this.body.position.y = y;
+    Matter.Body.setPosition(this.body, { x: this.x, y });
+    Matter.Body.setVelocity(this.body, { x: 0, y: 0 });
+    Matter.Body.setAngularVelocity(this.body, 0);
+    Matter.Body.setAngle(this.body, 0);
   }
 
   draw() {

@@ -25,6 +25,12 @@ export class ScreenWalls {
   }
 
   draw() {
-    this.walls.forEach((w) => w.draw());
+    // this.walls.forEach((w) => w.draw());
+    push();
+    strokeWeight(10);
+    line(0, 0, 0, height);
+    line(width, 0, width, height);
+    line(0, height, width, height);
+    pop();
   }
 }
